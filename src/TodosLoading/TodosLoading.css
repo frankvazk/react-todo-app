@@ -1,0 +1,71 @@
+.loading-item {    
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    padding: 15px;
+}
+
+.loading-item .loading-check-control {
+    border-radius: 50%;
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 23px;
+    margin-right: 10px;
+    grid-column: 1 / 1;
+}
+
+.loading-item .loading-delete-control {
+    border-radius: 50%;
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 23px;
+    margin-right: 10px;
+    grid-column: 10 / 10;
+}
+
+.loading-item .loading-text-control {        
+    width: 100%;
+    grid-column: 2 / 10;
+    line-height: 25px;
+}
+
+.loading-item .loading-text-control div {        
+    width: 98%;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.loading-item .loading-text-control div:not(:last-child) {        
+    margin-bottom: 3px;
+}
+
+.loading-item .loading-text-control div.small {        
+    width: 35%;
+}
+
+.loading-item .loading-text-control div.medium {        
+    width: 70%;
+}
+
+.loading-check-control,
+.loading-delete-control,
+.loading-text-control div {
+    background: linear-gradient(90deg, rgba(250,250,250,1), rgb(200,199,199));
+    background-size: 400% 400%;
+    animation: loadingAnimation 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
